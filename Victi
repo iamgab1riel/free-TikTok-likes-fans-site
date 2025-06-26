@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vict - Investment & Construction</title>
+    
+    <style>
+        /* Basic Setup & Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+        :root {
+            --primary-color: #0A2342; /* Professional Dark Blue */
+            --secondary-color: #F4F4F4; /* Light Grey Background */
+            --accent-color: #D9A441; /* Quality Gold/Ochre */
+            --text-color: #333;
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+        
+        /* Step 1 Part 2: Header & Navigation */
+        .main-header {
+            background: var(--white-color);
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .main-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), url(https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-size: cover;
+            background-position: center;
+            color: var(--white-color);
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white-color);
+        }
+        
+        .hero .accent-text {
+             color: var(--accent-color);
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Sections Styling */
+        .section {
+            padding: 60px 0;
+            opacity: 0; /* Hidden for JS animation */
+            transform: translateY(20px); /* Slightly moved for JS animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        
+        .services-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .card h3 {
+             color: var(--accent-color);
+             font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .main-footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">VICT</a>
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Building Your Future, <span class="accent-text">Securing Your Investments.</span></h1>
+                <p>Vict is your trusted partner in high-value construction and strategic financial growth.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Our Expertise</h2>
+                <div class="services-grid">
+                    <div class="card">
+                        <h3>Investment Services</h3>
+                        <p>We provide strategic investment opportunities in real estate and infrastructure projects with proven returns and managed risk.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Construction Services</h3>
+                        <p>From groundbreaking residential complexes to state-of-the-art commercial hubs, our construction quality is second to none.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section" style="background-color: var(--white-color);">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern House" style="width:100%; border-radius: 5px;">
+                        <h3>The Skyline Residence</h3>
+                        <p>A benchmark in luxury urban living.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Commercial Building" style="width:100%; border-radius: 5px;">
+                        <h3>Quantum Business Park</h3>
+                        <p>State-of-the-art commercial spaces.</p>
+                    </div>
+                     <div class="card">
+                        <img src="https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bridge Construction" style="width:100%; border-radius: 5px;">
+                        <h3>Gateway Bridge Project</h3>
+                        <p>Connecting communities with modern infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer id="contact" class="main-footer">
+            <div class="container">
+                <h2>Let's Build Together</h2>
+                <p>Contact us to discuss your next project or investment opportunity.</p>
+                <p><strong>Email:</strong> contact@vict.com | <strong>Phone:</strong> +256 123 456789</p>
+            </div>
+        </footer>
+    </main>
+    
+    <script>
+        // Simple animation to make sections fade in on scroll
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
